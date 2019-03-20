@@ -1,0 +1,52 @@
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+  <!-- {% for tb in tbs_cat %}
+    <a href="{{ url_for('showDepartment',tbid=tb.id)}}">{{tb.name}}</a><br>
+    {% endfor %} -->
+    {% with messages = get_flashed_messages() %}
+	    {% if messages %}
+	        <div class="alert alert-success alert-dismissable animated fadeIn">
+	            {% for message in messages %}
+	            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	            <p class="h4"><strong>{{ message }}</strong></p>
+	            {% endfor %}
+	        </div>
+	    {% endif %}
+	{% endwith %}
+
+	<div class="text-center">
+		<!-- <h1>Welcome to Bookstore</h1> -->
+	<!--	<img style="width: 750px; height: 400px; margin: 0; padding: 0; margin-top: 50px" src="http://rkce.in/images/0002.jpg">
+	</div> -->
+	<h1 style="font-family: Comic Sans MS;color:red;"><center>Welcome  TO CollegeEmploy Database</center></h1>
+	
+	<div class="w3-content w3-section" style="max-width:1000px">
+  <img class="mySlides" src="http://rkce.in/images/0002.jpg" style="width:100%;height:450">
+  <img class="mySlides" src="https://www.insidehighered.com/sites/default/server_files/media/dowling-college.jpg" style="width:100%;height:450">
+  <img class="mySlides" src="https://www.theedadvocate.org/wp-content/uploads/2017/11/Nebraska.jpg" style="width:100%;height:450">
+  <img class="mySlides" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201806/du-650_060114055506_0.jpeg?sSiAl81LdOQsn7LTQD4UyMluB1_e77Fl" style="width:100%;height:450">
+  <img class="mySlides" src="https://greatist.com/sites/default/files/Greatist_Healthiest_Colleges_2016_Feature.jpg" style="width:100%;height:450">
+  <marquee><h3 style="font-family:Comic Sans MS;color:green;">College Code:PEVPS</h3></marquee>
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 3 seconds
+}
+</script>
+
+    
+{% endblock content %}
+</div>

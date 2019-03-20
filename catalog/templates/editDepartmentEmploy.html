@@ -1,0 +1,35 @@
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+
+<div class="">
+		<div class="mr-sm-2 mb-2 col-sm-8" style="margin: 10px;">
+			<form action="{{ url_for('editDepartmentEmploy',tbid=tbid,tbename=employdetails.name)}}" method="POST">
+				<div class="panel panel-info">
+				  <div class="panel-heading">Edit Employ Details</div>
+				  <div class="panel-body">
+				  	
+					  <div class="form-group">
+					  	<label class="text-primary" for="name">Enter Employ Name:</label>
+					    <input type="name" class="form-control" name="name" value="{{employdetails.name}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="description">Enter description:</label>
+					    <input type="text" class="form-control" name="description" value="{{employdetails.description}}">
+					  </div>
+					  
+					  <div class="form-group">
+					  	<label class="text-primary" for="price">Enter Salary:</label>
+					    <input type="text" class="form-control" name="salary" value="{{employdetails.salary}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="feedback">Enter feedback:</label>
+					    <input type="text" class="form-control" name="feedback" value="{{employdetails.feedback}}">
+					  </div>					  
+				  </div> 
+				  <div class="panel-footer text-center"><input type="submit" class="btn btn-primary" value="Edit"></div>
+				</div>
+				</form>
+			</div>
+</div>
+{% endblock content %}
